@@ -1,21 +1,21 @@
 <template>
     <div class="page">
         <h4>Thêm liên hệ</h4>
-        <ContactFormAdd @submit:contact="create" />
+        <ContactForm :contact="contact" @submit:contact="create" />
         <p>{{ message }}</p>
     </div>
 </template>
 <script>
-import ContactFormAdd from "@/components/ContactFormAdd.vue";
+import ContactForm from "@/components/ContactForm.vue";
 import ContactService from "@/services/contact.service";
 
 export default {
     components: {
-        ContactFormAdd,
+        ContactForm,
     },
     data() {
         return {
-            contact: null,
+            contact: {},
             message: "",
         };
     },
