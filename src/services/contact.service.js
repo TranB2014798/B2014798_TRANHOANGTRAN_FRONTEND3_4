@@ -9,6 +9,7 @@ class ConactService {
     }
     async create(data) {
         return (await this.api.post("/", data)).data;
+        // return (data);
     }
     async deleteAll() {
         return (await this.api.delete("/")).data;

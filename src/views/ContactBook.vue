@@ -14,7 +14,7 @@ import InputSearch from '../components/InputSearch.vue';
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fa-solid fa-rotate-right"></i><span> Làm mới</span>
                 </button>
-                <button class="btn btn-sm btn-success" @click="" gotoAddContact>
+                <button class="btn btn-sm btn-success" @click="gotoAddContact">
                     <i class="fas fa-plus"></i><span> Thêm mới</span>
                 </button>
 

@@ -45,9 +45,8 @@ export default {
         Field,
         ErrorMessage,
     },
-    emits: ["submit:contact", "delete:contact"],
+    emits: ["submit:contact"],
     props: {
-        contact: { type: Object, required: true }
     },
     data() {
         const contactFormSchema = yup.object().shape({
@@ -68,17 +67,21 @@ export default {
                     "Số điện thoại không hợp lệ."
                 ),
         });
+        const contactLocal = {
+            name: "",
+            email: "",
+            address: "",
+            phone: "",
+            favorite: false,
+        };
         return {
-            contactLocal: this.contact,
+            contactLocal,
             contactFormSchema,
         };
     },
     methods: {
         submitContact() {
             this.$emit("submit:contact", this.contactLocal);
-        },
-        deleteContact() {
-            this.$emit("delete:contact", this.contactLocal.id);
         }
     },
 };
